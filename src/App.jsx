@@ -8,6 +8,7 @@ import Fourth from "./components/Fourth";
 import Fifth from "./components/Fifth";
 import Home from "./components/Home";
 import {useState} from "react";
+import End from "./components/End";
 
 
 const App = () => {
@@ -47,6 +48,10 @@ const App = () => {
 s
         <Route path={"/fifth"}>
           <Fifth />
+        </Route>
+
+        <Route path={"/end"}>
+          <End />
         </Route>
       </Switch>
       <Footer />

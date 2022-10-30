@@ -43,7 +43,7 @@ const Second = () => {
           placeholder={"Type your answer here"}
           onChange={handleChange}
           name={"inviteeName"}
-          value={formData.inviteeName}
+          value={formData.getFormValues.inviteeName}
           className={"text-white py-2 md:px-6 lg:px-12 border-b text-white bg-[#C3C6FF]"}
         />
       </form>

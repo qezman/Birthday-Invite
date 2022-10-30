@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 const getFormValues = () => {
   const storedValues = localStorage.getItem("formTwo")
   if (!storedValues) return {
-    "inviteeName": ""
+    "inviteeAge": ""
   }
   return JSON.stringify(storedValues)
 }
@@ -44,6 +44,7 @@ const Third = () => {
           placeholder={"Type your answer here"}
           onChange={handleChange}
           name={"inviteeAge"}
+          value={formData.getFormValues.inviteeAge}
           className={"text-white py-2 md:px-6 lg:px-12 border-b text-white bg-[#C3C6FF]"}
         />
       </form>
