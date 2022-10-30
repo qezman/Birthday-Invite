@@ -1,11 +1,17 @@
 import {Link} from "react-router-dom";
 import {BiUser, FaUser} from "react-icons/all";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+
+const getFormValues = () => {
+  const storedValues = localStorage.getItem("formFour")
+  if (!storedValues) return {
+    "inviteeName": ""
+  }
+  return JSON.stringify(storedValues)
+}
 
 const Fifth = () => {
-  const [formData, setFormData] = useState({
-    inviteePartner: ""
-  })
+  const [formData, setFormData] = useState({getFormValues})
 
   const handleChange = (e) => {
     setFormData(preForm => {
@@ -16,6 +22,10 @@ const Fifth = () => {
       }
     })
   }
+
+  useEffect(() => {
+    localStorage.setItem("formFour", JSON.stringify(formData))
+  }, [formData])
 
   const handleSubmit = (e) => {
     e.preventDefault()

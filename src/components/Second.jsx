@@ -1,11 +1,16 @@
 import {BiCheck} from "react-icons/all";
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
+const getFormValues = () => {
+  const storedValues = localStorage.getItem("formOne")
+  if (!storedValues) return {
+    "inviteeName": ""
+  }
+  return JSON.stringify(storedValues)
+}
 const Second = () => {
-  const [formData, setFormData] = useState({
-    inviteeName: ""
-  })
+  const [formData, setFormData] = useState({getFormValues})
 
   const handleChange = (e) => {
     setFormData(preForm => {
@@ -16,6 +21,10 @@ const Second = () => {
       }
     })
   }
+
+  useEffect(() => {
+    localStorage.setItem('formOne', JSON.stringify(formData))
+  },[formData])
 
   const handleSubmit = (e) => {
     e.preventDefault()
