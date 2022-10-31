@@ -1,10 +1,20 @@
 import {FaAngleDown, FaAngleUp} from "react-icons/all";
 import {useState} from "react";
 import {useHistory} from 'react-router-dom'
+import {useLocation} from "react-router-dom"
 
 const Footer = () => {
+  const {pathname} = useLocation()
+  console.log(pathname)
+  if (pathname === "/") return
+
   const history = useHistory()
   const [page, setPage] = useState(0)
+  const [show, setShow] = useState(false)
+
+  const handleShow = () => {
+    setShow(prevState => !prevState)
+  }
 
   const addPage = () => {
     console.log("added")
@@ -14,6 +24,9 @@ const Footer = () => {
   const subtractPage = () => {
     setPage(history.go(-1))
   }
+
+
+
   return (
     <section className={"sticky top-[100vh] bg-indigo-100 flex items-center justify-between px-1 py-2"}>
       <div className={"flex"}>

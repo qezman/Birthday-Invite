@@ -15,6 +15,12 @@ const App = () => {
 
   const [show, setShow] = useState(true)
 
+  // let path = "/"
+  // if (path==="/") {
+  //   return (
+  //
+  //   )
+  // }
   const handleShow = () => {
     setShow(prevState => !prevState)
   }
@@ -55,6 +61,7 @@ s
         </Route>
       </Switch>
       <Footer />
+      {/*{!show ? <Footer /> : `${"/"}` }*/}
     </section>
   )
 }

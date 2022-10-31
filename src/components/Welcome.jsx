@@ -4,12 +4,6 @@ import {Link} from "react-router-dom";
 
 
 const Welcome = () => {
-  // const [next, setNext] = useState(0)
-  //
-  //
-  // const handleClick = () => {
-  //   setNext(prevState => prevState + 1)
-  // }
   return (
     <section className={"px-4"}>
       <div className={"flex items-start gap-x-2"}>

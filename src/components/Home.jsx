@@ -9,11 +9,10 @@ const Home = () => {
         <p className={"text-center text-indigo-900 w-7/12 mx-auto text-lg md:text-xl md:w-6/12 lg:w-4/12"}>Hi, you are invited to our son x's birthday party in Ilorin</p>
       </div>
 
-      <footer className={"bg-gray-100 flex flex-col justify-center items-center top-[100vh] sticky"}>
-
+      <footer className={"bg-indigo-100 flex flex-col justify-center items-center top-[100vh] sticky"}>
         <div className={"flex items-center text-xs gap-x-1 py-2 md:text-lg lg:text-xl"}>
           <FaClock />
-          <p>Takes 30 sec</p>
+          <p>Takes 30 secs</p>
         </div>
 
         <div className={"pb-4"}>
