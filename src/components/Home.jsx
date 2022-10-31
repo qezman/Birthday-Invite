@@ -12,7 +12,7 @@ const Home = () => {
       <footer className={"bg-indigo-100 flex flex-col justify-center items-center top-[100vh] sticky"}>
         <div className={"flex items-center text-xs gap-x-1 py-2 md:text-lg lg:text-xl"}>
           <FaClock />
-          <p>Takes 30 secs</p>
+          <p>Takes 30 sec</p>
         </div>
 
         <div className={"pb-4"}>

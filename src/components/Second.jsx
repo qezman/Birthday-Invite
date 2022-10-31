@@ -5,9 +5,9 @@ import {useEffect, useState} from "react";
 const getFormValues = () => {
   const storedValues = localStorage.getItem("formOne")
   if (!storedValues) return {
-    "inviteeName": ""
+    inviteeName: ""
   }
-  return JSON.stringify(storedValues)
+  return JSON.parse(storedValues)
 }
 const Second = () => {
   const [formData, setFormData] = useState({getFormValues})
@@ -44,13 +44,13 @@ const Second = () => {
           onChange={handleChange}
           name={"inviteeName"}
           value={formData.getFormValues.inviteeName}
-          className={"text-white py-2 md:px-6 lg:px-12 border-b text-white bg-[#C3C6FF]"}
+          className={"text-white py-2 border-b text-white bg-[#C3C6FF]"}
         />
       </form>
 
       <Link to={"/third"}>
         <div className={"mx-6 py-1 flex rounded bg-red-500 items-center mt-6 lg:mx-10 px-3 w-16 text-white md:text-xl md:px-4 md:w-20"}>
-          <p>OK</p>
+          <button>OK</button>
           <BiCheck className={"text-xl md:text-3xl"} />
         </div>
       </Link>

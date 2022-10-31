@@ -5,9 +5,9 @@ import {useEffect, useState} from "react";
 const getFormValues = () => {
   const storedValues = localStorage.getItem("formFour")
   if (!storedValues) return {
-    "inviteeName": ""
+    inviteePartner: ""
   }
-  return JSON.stringify(storedValues)
+  return JSON.parse(storedValues)
 }
 
 const Fifth = () => {
@@ -42,16 +42,16 @@ const Fifth = () => {
               onChange={handleChange}
               name={"inviteePartner"}
               className={"bg-[#C3C6FF] w-20"}
-              value={formData.getFormValues.inviteeName}
+              value={formData.getFormValues.inviteePartner}
               placeholder={"___________"}
              />?</p>
         </form>
       </div>
 
       <Link to={"/end"}>
-        <div className={"bg-red-500 w-8/12 mx-5 mt-6 text-center text-lg text-white py-2 md:text-xl md:my-6 md:w-5/12"}>
+        <button className={"bg-red-500 w-8/12 mx-5 mt-6 text-center text-lg text-white py-2 md:text-xl md:my-6 md:w-5/12"}>
           Submit
-        </div>
+        </button>
       </Link>
 
       <div
