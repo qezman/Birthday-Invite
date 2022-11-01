@@ -9,6 +9,7 @@ import Fifth from "./components/Fifth";
 import Home from "./components/Home";
 import {useState} from "react";
 import End from "./components/End";
+import NotAvailable from "./components/NotAvailable";
 
 
 const App = () => {
@@ -58,6 +59,10 @@ s
 
         <Route path={"/end"}>
           <End />
+        </Route>
+
+        <Route path={"/not"}>
+          <NotAvailable />
         </Route>
       </Switch>
       <Footer />

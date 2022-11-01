@@ -1,4 +1,4 @@
-import {BiCheck, GiTick, TiTick} from "react-icons/all";
+import {BiCheck, FaCheck, GiTick, TiTick} from "react-icons/all";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
@@ -59,6 +59,17 @@ const getFormValues = () => {
 
 
 const First = () => {
+  const [yes, setYes] = useState(true)
+  const [no, setNo] = useState(false)
+  const handleShowYes = () => {
+    setYes(!yes)
+  }
+
+  const handleShowNo = () => {
+    setNo(!no)
+  }
+
+
   const [formData, setFormData] = useState({
     getFormValues
   })
@@ -95,36 +106,47 @@ const First = () => {
         <fieldset className={"md:text-lg lg:text-xl"}>
           <div className={"flex items-center gap-x-2 text-indigo-700 pt-3 py-1"}>
             <input
-              type="radio"
+              type="button"
               id={"yes"}
               name={"inviteeChoice"}
               value={"yes"}
               onChange={handleChange}
+              onClick={handleShowYes}
               checked={formData.inviteeChoice === "yes"}
+              className={`${yes && <FaCheck />} uppercase border w-40 cursor-pointer text-start px-3 text-indigo-500 border-indigo-500 py-1 my-2}`}
+
             />
-            <label htmlFor="choice">Yes</label>
+            {/*<label onClick={handleShowYes} htmlFor="choice">Yes</label>*/}
           </div>
 
           <div className={"flex items-center gap-x-2 text-indigo-700"}>
             <input
-              type="radio"
+              type="button"
               id={"no"}
               name={"inviteeChoice"}
               value={"no"}
               onChange={handleChange}
+              onClick={handleShowNo}
               checked={formData.inviteeChoice === "no"}
+              className={"uppercase border w-40 text-start px-3 cursor-pointer text-red-500 border-red-500 py-1 my-2"}
             />
-            <label htmlFor="choice">No</label>
+            {/*<label onClick={handleShowNo} htmlFor="choice">No</label>*/}
           </div>
         </fieldset>
-
       </form>
 
       <Link to={"/second"}>
-        <div className={"mx-6 py-1 flex rounded bg-red-500 items-center mt-4 px-3 w-16 text-white md:text-xl md:px-4 md:w-20"}>
+        {yes && <div
+          className={`mx-6 py-1 flex rounded bg-red-500 items-center mt-4 px-3 w-16 text-white md:text-xl md:px-4 md:w-20`}>
           <button>OK</button>
-          <BiCheck className={"text-xl md:text-3xl"} />
-        </div>
+          <BiCheck className={"text-xl md:text-3xl"}/>
+        </div>}
+      </Link>
+
+      <Link to={"/not"}>
+        {no && <div>
+          <button className={"px-8 bg-red-500 text-white py-1 my-2"}>Submit</button>
+        </div>}
       </Link>
     </section>
   )

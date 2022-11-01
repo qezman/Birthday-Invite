@@ -10,14 +10,14 @@ const Home = () => {
       </div>
 
       <footer className={"bg-indigo-100 flex flex-col justify-center items-center top-[100vh] sticky"}>
-        <div className={"flex items-center text-xs gap-x-1 py-2 md:text-lg lg:text-xl"}>
+        <div className={"flex items-center text-xs gap-x-1 py-1 md:text-lg lg:text-xl"}>
           <FaClock />
           <p>Takes 30 sec</p>
         </div>
 
-        <div className={"pb-4"}>
+        <div className={"pb-2"}>
           <Link to={"/welcome"}>
-            <button className={"bg-red-500 text-white px-3 py-1 rounded tracking-wide text-lg md:text-xl lg:text-2xl"}>RSVP</button>
+            <button className={"bg-red-500 text-white px-3 py-1 rounded tracking-wide text-sm md:text-lg lg:text-xl"}>RSVP</button>
           </Link>
         </div>
       </footer>

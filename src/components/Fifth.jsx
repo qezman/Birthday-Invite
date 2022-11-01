@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {BiUser, FaUser} from "react-icons/all";
 import {useEffect, useState} from "react";
+import End from "./End";
 
 const getFormValues = () => {
   const storedValues = localStorage.getItem("formFour")
@@ -10,12 +11,13 @@ const getFormValues = () => {
   return JSON.parse(storedValues)
 }
 
-const Fifth = () => {
+const Fifth = (props) => {
   const [formData, setFormData] = useState({getFormValues})
 
   const handleChange = (e) => {
     setFormData(preForm => {
       const {name, value} = e.target
+      console.log(formData.getFormValues.inviteePartner)
       return {
         ...preForm,
         [name]: value
