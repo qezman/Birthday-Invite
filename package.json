@@ -14,7 +14,7 @@
     "react-icons": "^4.4.0",
     "react-read-more-read-less": "^1.0.7",
     "react-router-dom": "^5.3.4",
-    "snippet": "^0.1.0"
+    "snippet": "^0.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
