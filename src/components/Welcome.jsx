@@ -1,9 +1,8 @@
-import {FaQuoteLeft, RiDoubleQuotesL} from "react-icons/all";
-import {useState} from "react";
-import {Link} from "react-router-dom";
+import { RiDoubleQuotesL} from "react-icons/all";
 
 
-const Welcome = () => {
+
+const Welcome = ({ handlePageChange }) => {
   return (
     <section className={"px-4"}>
       <div className={"flex items-start gap-x-2"}>
@@ -12,9 +11,10 @@ const Welcome = () => {
       </div>
 
       <div className={"my-4 px-6"}>
-        <Link to={"/first"}>
-          <button className={"text-sm text-white px-4 bg-red-500 py-1 rounded-lg md:text-xl"}>So exciting</button>
-        </Link>
+        <button 
+          onClick={() => handlePageChange('forward')}
+          className={"text-sm text-white px-4 bg-red-500 py-1 rounded-lg md:text-xl"}
+        >So exciting</button>
       </div>
     </section>
   )
